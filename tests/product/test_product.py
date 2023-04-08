@@ -1,9 +1,6 @@
 from inventory_report.inventory.product import Product
 
-# import pytest
 
-
-# @pytest.fixture
 def test_cria_produto():
     product = Product(
         1,
