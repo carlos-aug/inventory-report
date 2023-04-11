@@ -1,5 +1,5 @@
+import xmltodict
 from inventory_report.importer.importer import Importer
-import xml.etree.ElementTree as ET
 
 
 class XmlImporter(Importer):
@@ -7,5 +7,6 @@ class XmlImporter(Importer):
         if not path.endswith(".xml"):
             raise ValueError("Arquivo inválido")
         with open(path, encoding="utf-8") as f:
-            data = ET.parse(f)
-            return data
+            data = f.read()
+            result_data = xmltodict.parse(data)["dataset"]["record"]
+        return result_data
