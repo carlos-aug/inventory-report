@@ -14,7 +14,6 @@ class Inventory:
         elif type_report == "completo":
             return CompleteReport.generate(result_data)
 
-    @staticmethod
     def read_file_path(path):
         if path.endswith(".csv"):
             return CsvImporter.read_file_path(path)

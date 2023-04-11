@@ -7,7 +7,7 @@ class XmlImporter(Importer):
         if not path.endswith(".xml"):
             raise ValueError("Arquivo inválido")
 
-        with open(path, "r") as f:
+        with open(path, encoding="utf-8") as f:
             data = f.read()
             result_data = xmltodict.parse(data)["dataset"]["record"]
         return result_data
