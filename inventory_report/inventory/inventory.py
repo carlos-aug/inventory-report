@@ -16,8 +16,8 @@ class Inventory:
 
     def read_file_path(path):
         if path.endswith(".csv"):
-            return CsvImporter.read_file_path(path)
+            return CsvImporter.import_data(path)
         elif path.endswith(".json"):
-            return JsonImporter.read_file_path(path)
+            return JsonImporter.import_data(path)
         elif path.endswith(".xml"):
-            return XmlImporter.read_file_path(path)
+            return XmlImporter.import_data(path)
