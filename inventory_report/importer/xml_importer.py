@@ -1,5 +1,5 @@
-import xmltodict
 from inventory_report.importer.importer import Importer
+import xmltodict
 
 
 class XmlImporter(Importer):
@@ -10,4 +10,4 @@ class XmlImporter(Importer):
         with open(path, encoding="utf-8") as f:
             data = f.read()
             result_data = xmltodict.parse(data)["dataset"]["record"]
-        return result_data
+            return result_data
